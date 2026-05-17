@@ -1,6 +1,41 @@
 @FacturacionAPI_HostAddress = http://localhost:5091
 
-GET {{FacturacionAPI_HostAddress}}/weatherforecast/
+### Registrar Factura
+
+POST {{FacturacionAPI_HostAddress}}/api/factura
+Content-Type: application/json
 Accept: application/json
+
+{
+  "cliente": "Empresa ABC",
+  "fecha_Factura": "2026-05-17",
+  "detalles": [
+    {
+      "producto": "Laptop Lenovo",
+      "cantidad": 1,
+      "precio": 3500000
+    },
+    {
+      "producto": "Mouse Logitech",
+      "cantidad": 2,
+      "precio": 120000
+    },
+    {
+      "producto": "Teclado Mecánico",
+      "cantidad": 1,
+      "precio": 280000
+    },
+    {
+      "producto": "Monitor Samsung",
+      "cantidad": 2,
+      "precio": 950000
+    },
+    {
+      "producto": "Disco SSD 1TB",
+      "cantidad": 1,
+      "precio": 450000
+    }
+  ]
+}
 
 ###
