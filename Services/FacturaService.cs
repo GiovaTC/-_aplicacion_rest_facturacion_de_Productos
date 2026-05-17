@@ -1,4 +1,6 @@
-﻿using FacturacionAPI.Data;
+﻿// Services/FacturaService.cs
+
+using FacturacionAPI.Data;
 using FacturacionAPI.Entities;
 
 namespace FacturacionAPI.Services
@@ -14,19 +16,9 @@ namespace FacturacionAPI.Services
 
         public async Task GuardarFactura(Factura factura)
         {
-            decimal total = 0;
-
-            foreach (var item in factura.Detalles)
-            {
-                item.Subtotal = item.Cantidad * item.Precio;
-                total += item.Subtotal;
-
-            }
-
-            factura.Total = total;
-
             _context.Facturas.Add(factura);
+
             await _context.SaveChangesAsync();
         }
     }
-}   
+}

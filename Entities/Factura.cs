@@ -1,14 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// Entities/Factura.cs
+
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FacturacionAPI.Entities
 {
+    [Table("FACTURAS")]
     public class Factura
     {
         [Key]
-        public int Id_Factura { get; set; }
-        public string Cliente { get; set; }
-        public DateTime Fecha_Factura { get; set; }
+        [Column("ID_FACTURA")]
+        public int IdFactura { get; set; }
+
+        [Column("CLIENTE")]
+        public string Cliente { get; set; } = string.Empty;
+
+        [Column("FECHA_FACTURA")]
+        public DateTime FechaFactura { get; set; }
+
+        [Column("TOTAL")]
         public decimal Total { get; set; }
+
         public List<FacturaDetalle> Detalles { get; set; }
+            = new List<FacturaDetalle>();
     }
 }   

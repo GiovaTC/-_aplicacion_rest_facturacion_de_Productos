@@ -1,4 +1,6 @@
-﻿using FacturacionAPI.Entities;
+﻿// Data/ApplicationDbContext.cs
+
+using FacturacionAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FacturacionAPI.Data
@@ -6,21 +8,22 @@ namespace FacturacionAPI.Data
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(
-            DbContextOptions<ApplicationDbContext> options) 
+            DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-        
-        public DbSet<Factura> Facturas { get; set; }
-        public DbSet<FacturaDetalle> FacturaDetalle { get; set; }
+
+        public DbSet<Factura> Facturas => Set<Factura>();
+        public DbSet<FacturaDetalle> FacturaDetalles => Set<FacturaDetalle>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Factura>()
-                .ToTable("FACTURAS");
+                .HasMany(f => f.Detalles)
+                .WithOne(d => d.Factura)
+                .HasForeignKey(d => d.IdFactura);
 
-            modelBuilder.Entity<FacturaDetalle>()
-                .ToTable("FACTURA_DETALLE");
+            base.OnModelCreating(modelBuilder);
         }
-    }   
-}   
+    }
+}
