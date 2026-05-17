@@ -1,7 +1,11 @@
 # -_aplicacion_rest_facturacion_de_Productos :.
 Aplicación REST para Facturación de Productos:
 
-<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/9f2b0a91-f54d-48ef-9a3c-22bed63042a2" />  
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/9f2b0a91-f54d-48ef-9a3c-22bed63042a2" />
+
+<img width="1365" height="765" alt="image" src="https://github.com/user-attachments/assets/628dd3d9-399b-4b02-8d80-d728533aa169" />    
+
+<img width="2545" height="1071" alt="image" src="https://github.com/user-attachments/assets/3e3e5e54-6fd4-4be5-b448-04d5af601a97" />        
 
 ```
 Visual Studio 2022 + .NET 8 + Oracle 19c + Postman
